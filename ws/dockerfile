@@ -1,0 +1,9 @@
+FROM python:3.8.5-alpine
+LABEL author=fabiano
+LABEL description=development
+WORKDIR /app
+ADD . /app
+VOLUME $pwd/ciclista/DAO/data/cyclist.db:/container/ciclista/DAO/data/cyclist.db
+RUN pip install -r requirements.txt
+ENV NAME=fgteixeira
+CMD ["python", "app.py"]
