@@ -8,64 +8,51 @@ Serão necessários as seguintes instalações:
   <li><a href="https://virtualenv.pypa.io/en/stable/installation.html">Virtualenv</a></li>
 </ul>
 
-
-# virtualenv
-
-Com o terminal aberto:
-<br>
-#verificando a versão do python
-<br>
-python3 --version
-
-<br>
-<br>
-#verificando versão pip3
-pip3 --version
-
-<br>
-<br>
-#verificando versão do virtualenv
-<br>
-virtualenv --version
-
-<br>
-<br>
-#criando ambiente virtual
-<br>
-virtualenv -p python3 docker_flaskapi
-
-<br>
-<br>
-#ativando o ambiente virtual
-<br>
-source docker_flaskapi/bin/activate
-
-<br>
-<br>
-#instalando flask no ambiente virtual
-<br>
-pip3 install flask
-
-<br>
-<br>
-#copiando para o arquivo requirements todas as dependencias
-<br>
-pip3 freeze > requirements.txt
-
-# docker
-
-#build image
-<br>
-docker build -t flaskapi .
-
-<br>
-<br>
-#check image
-<br>
-docker images
-
-<br>
-<br>
-#run flaskapi into a container
-<br>
-docker run -it --name flask-container -p 3200:3200 flaskapi
+<table align=center border=0>
+  <tr>
+    <td colspan=2>#virtualenv</td>
+  </tr>
+  <tr>
+    <td>#verificando a versão do python</td>
+    <td>python3 --version</td>
+  </tr>
+  <tr>
+    <td>#verificando versão pip3</td>
+    <td>pip3 --version</td>
+  </tr>
+  <tr>
+    <td>#verificando versão do virtualenv</td>
+    <td>virtualenv --version</td>
+  </tr>
+  <tr>
+    <td>#criando ambiente virtual</td>
+    <td>virtualenv -p python3 docker_flaskapi</td>
+  </tr>
+  <tr>
+    <td>#ativando o ambiente virtual</td>
+    <td>source docker_flaskapi/bin/activate</td>
+  </tr>
+  <tr>
+    <td>#instalando flask no ambiente virtual</td>
+    <td>pip install flask</td>
+  </tr>
+  <tr>
+    <td>#copiando para o arquivo requirements todas as dependencias</td>
+    <td>pip3 freeze > requirements.txt</td>
+  </tr>
+  <tr>
+    <td colspan=2>Docker</td>
+  </tr>
+  <tr>
+    <td>#construindo a image</td>
+    <td>docker build -t flaskapi .</td>
+  </tr>
+  <tr>
+    <td>#verificando a image criada</td>
+    <td>docker images</td>
+  </tr>
+  <tr>
+    <td>#instanciando o container a partir da imagem flaskapi</td>
+    <td>docker run -it --name flask-container -p 3200:3200 flaskapi</td>
+  </tr>
+</table>
