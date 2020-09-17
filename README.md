@@ -2,7 +2,12 @@
 
 A ideia é disponibilizar como conteinerizar um projeto e aproveitar todos os benefícios utilizando Docker. A ideia foi continuar a versão do repositório <a href="https://github.com/teixeirafabiano/pythonFlask">pythonFlask</a> com algumas alterações na estrutura e incremento de mais métodos no entrypoint.
 
-Será necessário instalação então segue <a href="https://docs.docker.com/engine/install/ubuntu/">link</a> do Docker...
+<ul>
+Serão necessários as seguintes instalações:
+  <li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker</a></li>
+  <li><a href="https://virtualenv.pypa.io/en/stable/installation.html">Virtualenv</a></li>
+</ul>
+
 
 # docker
 
