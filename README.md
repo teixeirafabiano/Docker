@@ -10,7 +10,7 @@ Serão necessários as seguintes instalações:
 
 <table align=center border=0>
   <tr>
-    <td colspan=2>#virtualenv</td>
+    <td colspan=2>Virtualenv</td>
   </tr>
   <tr>
     <td>#verificando a versão do python</td>
