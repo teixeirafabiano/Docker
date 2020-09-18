@@ -54,7 +54,7 @@ Serão necessários as seguintes instalações:
     </td>
   </tr>
   <tr>
-    <td>#verificando a image criada</td>
+    <td>#verificando as images criada</td>
     <td>docker images</td>
   </tr>
   <tr>
@@ -62,3 +62,5 @@ Serão necessários as seguintes instalações:
     <td>docker run -it --name flask-container -p 3200:3200 flaskapi</td>
   </tr>
 </table>
+
+Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Afinal, o que criamos: imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução! 
