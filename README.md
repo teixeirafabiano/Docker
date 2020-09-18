@@ -79,6 +79,7 @@ Então segue descrição dos comandos que estão no Dockerfile linha a linha:
 <b>ENV:</b> Variáveis de ambiente podem, pelo statement ENV, ser usadas em certas instruções como variáveis a ser interpretadas pelo Dockerfile.<br>
 <b>CMD:</b> Informa qual comando é executado por padrão. No caso, o entrypoint app.py.<br>
 <br>
+
 Compilação Docker
 =================
 <br>
@@ -89,6 +90,7 @@ Isso diz ao Docker para construir um contêiner usando o projeto no diretório d
 Importante: Cada vez que o código é alterado, é necessário construir o container novamente! Se o seu Dockerfile estiver organizado corretamente, a compilação deve levar apenas alguns segundos.
 <br>
 <br>
+
 Docker run
 ==========
 <br>
