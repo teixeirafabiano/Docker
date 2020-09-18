@@ -100,13 +100,18 @@ docker run -it --name flask-container -p 3200:3200 flaskapi
 <br><br>
 -p conecta a porta 3200 do container Docker à porta 3200 da máquina para que o HTTP possa funcionar.<br>
 -it modo interativo. Mantém o STDIN aberto mesmo sem console anexado e aloca uma pseudo TTY.<br>
-<br><br>
-Seu aplicativo flask agora deve estar em execução - vá para o endereço IP do seu servidor no seu navegador.
+<br>
+O aplicativo flask agora deve estar em execução - vá para o endereço IP do seu servidor no seu navegador.
 <br><br>
 Se você receber um erro como “endereço já em uso” ou “porta 3200 já em uso”:
 <br><br>
-Certifique-se de que seu aplicativo Flask ou outro aplicativo ainda não esteja em execução e usando a porta 3200
-Às vezes, o docker não desassocia as portas após fechar os containers, então tente executar o container novamente. sudo service docker restart
-Você pode matar o contêiner com CTRL + C. Observe que se você acessar o IP do seu servidor no navegador, não há nada lá.
+Certifique-se de que seu aplicativo Flask ou outro aplicativo ainda não esteja em execução e usando a porta 3200. Às vezes, o docker não desassocia as portas após fechar os containers, então tente executar o container novamente: sudo service docker restart. Você pode matar o container com CTRL + C. Observe que se você acessar o IP do seu servidor no navegador, não há nada lá.
 
-
+Executando Persistentemente
+===========================
+Provavelmente, existe a intenção que o aplicativo seja executado em segundo plano e reiniciado automaticamente se a máquina servidor for reiniciada. Então, vamos adicionar algumas coisas ao nosso comando:docker run<br>
+<br>
+docker run -d --restart=always -p 3200:32090 -t flaskapi
+<br><br>
+-d executa o contêiner do Docker como um daemon em segundo plano.<br>
+--restart=always reinicia o contêiner se ele travar ou se o dock do sistema estiver em execução for reiniciado.<br>
