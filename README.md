@@ -49,7 +49,8 @@ Serão necessários as seguintes instalações:
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>Sending build context to Docker daemon  14.31MB
+    <td>
+      <p>Sending build context to Docker daemon  14.31MB
 Step 1/9 : FROM python:3.8.5-alpine
  ---> 0f03316d4a27
 Step 2/9 : LABEL author=fabiano
@@ -103,7 +104,7 @@ Step 9/9 : CMD ["python", "app.py"]
 Removing intermediate container 5cd629a5f580
  ---> f5fbed860149
 Successfully built f5fbed860149
-Successfully tagged flaskapi:latest
+Successfully tagged flaskapi:latest</p>
 </td>
   </tr>
   <tr>
