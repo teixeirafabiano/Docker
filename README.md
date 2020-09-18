@@ -65,14 +65,14 @@ Serão necessários as seguintes instalações:
 
 Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Mas afinal, o que criamos? Imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução!
 
-<p>
-FROM python:3.8.5-alpine
-LABEL author=fabiano
-LABEL description=development
-WORKDIR /app
-ADD . /app
-VOLUME $pwd/ciclista/DAO/data/cyclist.db:/container/ciclista/DAO/data/cyclist.db
-RUN pip install -r requirements.txt
-ENV NAME=fgteixeira
-CMD ["python", "app.py"]
-</p>
+Então segue comentário linha a linha do arquivo Dockerfile:
+
+<b>FROM:</b> Informa qual imagem será usada como base
+<b>LABEL:</b> Em alguns casos você pode querer usar algum argumento que será substituído pelo valor correto em tempo de criação da imagem.
+<b>WORKDIR:</b> Define o dirtório de trabalho para qualquer instrução: RUN, CMD, ENTRYPOINT, COPY e ADD. Se a instrução não existir, será criado mesmo se não for usado em nenhuma instrução subsequente no Dockerfile.
+<b>ADD:</b> A instrução permite copiar os arquivos dentro do sistema de arquivo da imagem.
+<b>VOLUME:</b> É o mecanismo preferencial para persistir os dados gerados e usados pelo container. Embora a montagem dependa da estrutura de diretório da máquina host docker, os volumes são totalmente gerenciados pelo docker.
+<b>RUN:</b> Informa quais comandos serão executados no ambiente para efetuar as mudanças necessárias na infraestrutura do sistema. São como comandos executados no shell do ambiente. E nesse caso, é executado a instalação de todas as dependências do sistema no arquivo requirements.txt.
+<b>ENV:</b> Variáveis de ambiente podem, pelo statement ENV, ser usadas em certas instruções como variáveis a ser interpretadas pelo Dockerfile.
+<b>CMD:</b> Informa qual comando é executado por padrão. No caso, o entrypoint app.py.
+
