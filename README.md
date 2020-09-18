@@ -84,9 +84,9 @@ Compilação Docker
 =================
 <br>
 Agora podemos construir o container docker. Certifique-se de que está no diretório raiz do projeto (crie um diretório chamado flaskapi e copie toda pasta ws para dentro) e, em seguida, faça docker build -t flaskapi .
-<br>
+<br><br>
 Isso diz ao Docker para construir um contêiner usando o projeto no diretório de trabalho atual (o . no final) e marcá-lo flaskapi(significa “tag”). O Docker puxará a imagem base do Docker Hub e, em seguida, copiará o código do nosso aplicativo para o contêiner.-t python:3.8.5-alpine
-<br>
+<br><br>
 Importante: Cada vez que o código é alterado, é necessário construir o container novamente! Se o seu Dockerfile estiver organizado corretamente, a compilação deve levar apenas alguns segundos.
 <br>
 <br>
@@ -95,16 +95,16 @@ Docker run
 ==========
 <br>
 Agora estamos prontos para correr! Supondo que você tenha marcado o contêiner my_flask_appcomo eu fiz acima, execute-o com:
-<br>
+<br><br>
 docker run -it --name flask-container -p 3200:3200 flaskapi
-<br>
+<br><br>
 -p conecta a porta 3200 do container Docker à porta 3200 da máquina para que o HTTP possa funcionar.<br>
 -it modo interativo. Mantém o STDIN aberto mesmo sem console anexado e aloca uma pseudo TTY.<br>
-<br>
+<br><br>
 Seu aplicativo flask agora deve estar em execução - vá para o endereço IP do seu servidor no seu navegador.
-<br>
+<br><br>
 Se você receber um erro como “endereço já em uso” ou “porta 3200 já em uso”:
-<br>
+<br><br>
 Certifique-se de que seu aplicativo Flask ou outro aplicativo ainda não esteja em execução e usando a porta 3200
 Às vezes, o docker não desassocia as portas após fechar os containers, então tente executar o container novamente. sudo service docker restart
 Você pode matar o contêiner com CTRL + C. Observe que se você acessar o IP do seu servidor no navegador, não há nada lá.
