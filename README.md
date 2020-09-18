@@ -63,4 +63,14 @@ Serão necessários as seguintes instalações:
   </tr>
 </table>
 
-Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Afinal, o que criamos: imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução! 
+Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Mas afinal, o que criamos? Imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução!
+
+FROM python:3.8.5-alpine
+LABEL author=fabiano
+LABEL description=development
+WORKDIR /app
+ADD . /app
+VOLUME $pwd/ciclista/DAO/data/cyclist.db:/container/ciclista/DAO/data/cyclist.db
+RUN pip install -r requirements.txt
+ENV NAME=fgteixeira
+CMD ["python", "app.py"]
