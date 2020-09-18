@@ -107,8 +107,8 @@ Se você receber um erro como “endereço já em uso” ou “porta 3200 já em
 <br><br>
 Certifique-se de que seu aplicativo Flask ou outro aplicativo ainda não esteja em execução e usando a porta 3200. Às vezes, o docker não desassocia as portas após fechar os containers, então tente executar o container novamente: sudo service docker restart. Você pode matar o container com CTRL + C. Observe que se você acessar o IP do seu servidor no navegador, não há nada lá.
 
-Executando Persistentemente
-===========================
+Executando de Forma Persistente
+===============================
 Provavelmente, existe a intenção que o aplicativo seja executado em segundo plano e reiniciado automaticamente se a máquina servidor for reiniciada. Então, vamos adicionar algumas coisas ao nosso comando:docker run<br>
 <br>
 docker run -d --restart=always -p 3200:32090 -t flaskapi
