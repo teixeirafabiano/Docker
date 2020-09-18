@@ -65,7 +65,7 @@ Serão necessários as seguintes instalações:
 
 Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Mas afinal, o que criamos? Imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução!
 
-Então segue comentário linha a linha do arquivo Dockerfile:
+Então segue descrição dos comandos que estão no Dockerfile linha a linha:
 
 <b>FROM:</b> Informa qual imagem será usada como base.<br>
 <b>LABEL:</b> Em alguns casos você pode querer usar algum argumento que será substituído pelo valor correto em tempo de criação da imagem.<br>
@@ -75,4 +75,3 @@ Então segue comentário linha a linha do arquivo Dockerfile:
 <b>RUN:</b> Informa quais comandos serão executados no ambiente para efetuar as mudanças necessárias na infraestrutura do sistema. São como comandos executados no shell do ambiente. E nesse caso, é executado a instalação de todas as dependências do sistema no arquivo requirements.txt.<br>
 <b>ENV:</b> Variáveis de ambiente podem, pelo statement ENV, ser usadas em certas instruções como variáveis a ser interpretadas pelo Dockerfile.<br>
 <b>CMD:</b> Informa qual comando é executado por padrão. No caso, o entrypoint app.py.<br>
-
