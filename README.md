@@ -65,6 +65,7 @@ Serão necessários as seguintes instalações:
 
 Dockerfile
 ==========
+<br>
 Para criar a imagem usei o arquivo Dockerfile que possui as instruções que são lidas do início ao fim e cada linha executada por vez. Mas afinal, o que criamos? Imagem ou container? Abstraindo, o container é a instância da classe imagem criada. A imagem é a abstração de somente leitura, de onde será instânciado o container. Com isso, a imagem jamais estará em execução!
 <br>
 Então segue descrição dos comandos que estão no Dockerfile linha a linha:
@@ -77,17 +78,20 @@ Então segue descrição dos comandos que estão no Dockerfile linha a linha:
 <b>RUN:</b> Informa quais comandos serão executados no ambiente para efetuar as mudanças necessárias na infraestrutura do sistema. São como comandos executados no shell do ambiente. E nesse caso, é executado a instalação de todas as dependências do sistema no arquivo requirements.txt.<br>
 <b>ENV:</b> Variáveis de ambiente podem, pelo statement ENV, ser usadas em certas instruções como variáveis a ser interpretadas pelo Dockerfile.<br>
 <b>CMD:</b> Informa qual comando é executado por padrão. No caso, o entrypoint app.py.<br>
-
+<br>
 Compilação Docker
 =================
+<br>
 Agora podemos construir o container docker. Certifique-se de que está no diretório raiz do projeto (crie um diretório chamado flaskapi e copie toda pasta ws para dentro) e, em seguida, faça docker build -t flaskapi .
 <br>
 Isso diz ao Docker para construir um contêiner usando o projeto no diretório de trabalho atual (o . no final) e marcá-lo flaskapi(significa “tag”). O Docker puxará a imagem base do Docker Hub e, em seguida, copiará o código do nosso aplicativo para o contêiner.-t python:3.8.5-alpine
 <br>
 Importante: Cada vez que o código é alterado, é necessário construir o container novamente! Se o seu Dockerfile estiver organizado corretamente, a compilação deve levar apenas alguns segundos.
 <br>
+<br>
 Docker run
 ==========
+<br>
 Agora estamos prontos para correr! Supondo que você tenha marcado o contêiner my_flask_appcomo eu fiz acima, execute-o com:
 <br>
 docker run -it --name flask-container -p 3200:3200 flaskapi
@@ -102,8 +106,5 @@ Se você receber um erro como “endereço já em uso” ou “porta 3200 já em
 Certifique-se de que seu aplicativo Flask ou outro aplicativo ainda não esteja em execução e usando a porta 3200
 Às vezes, o docker não desassocia as portas após fechar os containers, então tente executar o container novamente. sudo service docker restart
 Você pode matar o contêiner com CTRL + C. Observe que se você acessar o IP do seu servidor no navegador, não há nada lá.
-
-
-
 
 
