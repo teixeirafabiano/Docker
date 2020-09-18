@@ -75,3 +75,12 @@ Então segue descrição dos comandos que estão no Dockerfile linha a linha:
 <b>RUN:</b> Informa quais comandos serão executados no ambiente para efetuar as mudanças necessárias na infraestrutura do sistema. São como comandos executados no shell do ambiente. E nesse caso, é executado a instalação de todas as dependências do sistema no arquivo requirements.txt.<br>
 <b>ENV:</b> Variáveis de ambiente podem, pelo statement ENV, ser usadas em certas instruções como variáveis a ser interpretadas pelo Dockerfile.<br>
 <b>CMD:</b> Informa qual comando é executado por padrão. No caso, o entrypoint app.py.<br>
+
+Compilação Docker
+Agora podemos construir o contêiner docker. Certifique-se de que está no diretório raiz do projeto (crie um diretório chamado flaskapi e copie toda pasta ws para dentro) e, em seguida, faça docker build -t flaskapi .
+
+Isso diz ao Docker para construir um contêiner usando o projeto no diretório de trabalho atual (o . no final) e marcá-lo flaskapi(significa “tag”). O Docker puxará a imagem base do Docker Hub e, em seguida, copiará o código do nosso aplicativo para o contêiner.-t python:3.8.5-alpine
+
+
+
+
