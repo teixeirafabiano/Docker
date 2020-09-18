@@ -10,7 +10,7 @@ Serão necessários as seguintes instalações:
 
 <table align=center border=0>
   <tr>
-    <td colspan=2>Virtualenv</td>
+    <td colspan=2><b>Virtualenv</b></td>
   </tr>
   <tr>
     <td>#verificando a versão do python</td>
@@ -41,14 +41,14 @@ Serão necessários as seguintes instalações:
     <td>pip3 freeze > requirements.txt</td>
   </tr>
   <tr>
-    <td colspan=2>Docker</td>
+    <td colspan=2><b>Docker</b></td>
   </tr>
   <tr>
     <td>#construindo a image</td>
     <td>docker build -t flaskapi .</td>
   </tr>
   <tr>
-    <td>ao final de todas as tasks, tudo ok, mensagem de sucesso com id da imagem e tag</td>
+    <td>Nota: ao final de todas as tasks, tudo ok, mensagem de sucesso com id da imagem e tag</td>
     <td>Successfully built f5fbed860149<br>
         Successfully tagged flaskapi:latest
     </td>
